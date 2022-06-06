@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="imgDiv">
+                    <img src="../../assets/resmax-logo.png">
+                </div>
+                <div class="text-center">
+                    <h1>Login</h1>
+                    
+                </div>
+                <form [formGroup]="loginform"  (ngSubmit)="login()">
+                
+                <div class="mb-3">
+                       <label for="" class="form-label">Mobile Number</label>
+                       <input formControlName="contact_number" type="text" class="form-control" id="">
+                       <span style="color:red" *ngIf="!loginStatus">incorrect Mobile Number</span>
+                </div> 
+                <div class="mb-3">
+                    <label for="" class="form-label">Password</label>
+                    <input formControlName="password" type="password" class="form-control" id="">
+                    <span style="color:red" *ngIf="!loginStatus">incorrect Password</span>
+                </div> 
+                <button style="padding-top: 10px;" type="submit" class="btn btn-primary">Login</button>
+                </form>
+                
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,92 @@
+
+
+#row {
+   margin: 10px 10px;
+   padding:10px 10px;
+   line-height: 8vh;
+   width: 100%;
+   display: flex;
+   flex-direction: row; 
+   background-color: #fff;
+   align-content:space-between;
+  
+}
+
+#row div{
+    width: inherit;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 0px;
+    margin-bottom: 0px;
+    box-shadow: indigo;
+    text-align: -webkit-center;
+    border-radius: 10px;
+    padding: 1px;
+    align-items: center;
+
+}
+
+hr {
+    margin-top: 1.5px;
+    width: inherit;
+    margin-left: -20px;
+    align-self:center;
+    color: #fff;
+    height: 1vh;
+}
+
+mat-toolbar {
+    height: 70px;
+    background: #3f51b5;  
+}
+
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+
+
+.example-spacer {
+    flex:1 1 auto;
+    
+}
+
+.thisspan {
+    margin-left: 10px;
+}
+
+table {
+    width: 100%;
+}
+
+.mat-form-field {
+    font-size: 14px;
+    width: 100%;
+}
+
+td, th {
+    width: 18%;
+}
+
+
+.container {
+    width:1300px;
+    margin:0px auto;
+    padding: 0px 0px;
+}
+
+.editdeleteDiv {
+    display: flex;
+    flex-direction: row;
+      
+}
+
+.AddButtonContainer button{
+    float: right;
+    margin-right: 120px;
+}
+
+
+

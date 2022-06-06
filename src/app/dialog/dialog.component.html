@@ -1,0 +1,72 @@
+<h1 mat-dialog-title>{{actionType}}</h1>
+<div mat-dialog-content>
+
+    <form [formGroup]="registerForm">
+        <mat-form-field appearance="outline">
+            <mat-label>user Name</mat-label>
+            <input formControlName="username" matInput placeholder="user name">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input formControlName="password" matInput type="password" placeholder="password">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input formControlName="name" matInput placeholder="name">
+        </mat-form-field>
+         
+        <mat-form-field appearance="outline">
+            <mat-label>Mobile Number</mat-label>
+            <input formControlName="contact_number" matInput type="phone" placeholder="phone number">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input formControlName="email" matInput type="email" placeholder="your email">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Address</mat-label>
+            <input formControlName="address" matInput  placeholder="your address">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>created</mat-label>
+                <input formControlName="created" matInput [matDatepicker]="picker">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker ></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Role</mat-label>
+            <mat-select formControlName="role" placeholder="Role">
+                <mat-option value="1">Super Admin </mat-option>
+                <mat-option value="2">Admin</mat-option>
+                <mat-option value="3">Client</mat-option> 
+                <mat-option value="4">Customer</mat-option> 
+                <mat-option value="5">Security</mat-option> 
+                <mat-option value="6">Visitor</mat-option> 
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" placeholder="status">
+                <mat-option value="1">Active </mat-option>
+                <mat-option value="2">Inactive</mat-option>
+            </mat-select>
+        </mat-form-field>
+    
+
+    
+        <div mat-dialog-actions [align]="'end'">
+            <button mat-raised-button color="warn" mat-dialog-close>close</button>
+            <button mat-raised-button color="primary" (click)="addUser()">{{actionButton}}</button>
+        </div>
+    </form>
+</div>
+
+
+

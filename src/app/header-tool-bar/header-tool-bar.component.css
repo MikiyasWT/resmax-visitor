@@ -1,0 +1,11 @@
+mat-toolbar {
+    height: 70px;
+    background: #3f51b5; 
+    margin-bottom: 10px;
+    padding: 10px 10px;  
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+

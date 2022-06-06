@@ -1,0 +1,229 @@
+
+<app-header-tool-bar></app-header-tool-bar>
+<mat-tab-group color="primary" backgroundColor="primary">
+
+  <mat-tab label="Customers" class="matTabLabel">
+    <div class="AddButtonContainer" style="margin-top: 10px;margin-bottom:5px;">
+        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon style="margin-right: 5px;">person_add</mat-icon>Add Customer</button>
+    </div>
+      
+         
+    <div class="container">
+        <div style="margin-top:10px;">
+          <mat-form-field appearance="standard">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event,customerdataSource)" placeholder="Ex. Mia" #input>
+         
+           </mat-form-field>
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="customerdataSource" matSort>
+          <ng-container matColumnDef="id">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+           <td mat-cell *matCellDef="let row">{{row.id}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row">{{row.name}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let row">{{row.status}}</td>
+          </ng-container>
+
+         
+          
+          <ng-container matColumnDef="contact_number">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>contact_number</th>
+            <td mat-cell *matCellDef="let row">{{row.contact_number}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="email" class="emailColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let row">{{row.email}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+            <td mat-cell *matCellDef="let row">{{row.address}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>role</th>
+            <td mat-cell *matCellDef="let row">{{row.role}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="created" class="createdColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>created</th>
+            <td mat-cell *matCellDef="let row">{{row.created}}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="client_id" class="client_idColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>client id</th>
+            <td mat-cell *matCellDef="let row">{{row.client_id}}</td>
+          </ng-container>
+           
+          <ng-container matColumnDef="client_name" class="client_nameColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>client name</th>
+            <td mat-cell *matCellDef="let row">{{row.client_name}}</td>
+          </ng-container>
+          
+      
+          
+      
+          <ng-container matColumnDef="action" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+            <td mat-cell *matCellDef="let row" >
+            <div class="editdeleteDiv">
+              <button mat-icon-button (click)="editCustomer(row)" color="primary">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+               </button>
+        
+               <button mat-icon-button color="warn" (click)="deleteCustomer(row.id)">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+              </button>
+            </div>
+            
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="customerColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: customerColumns;"></tr>
+          
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">No data matching your search "{{input.value}}"</td>
+            
+          </tr>
+          
+          
+      
+          </table>
+          <mat-paginator [pageSizeOptions]="[5,10,25,100]" aria-label="Select page of users"></mat-paginator>
+          
+        </div>
+        </div>
+      </div>
+  </mat-tab>
+  
+
+
+
+
+
+
+
+
+  <mat-tab label="Security" class="matTabLabel">
+    <div class="AddButtonContainer" style="margin-top: 10px;margin-bottom:5px;">
+        <button mat-raised-button color="primary" (click)="openDialog()"><mat-icon style="margin-right: 5px;">person_add</mat-icon>Add Security</button>
+    </div>
+      
+         
+    <div class="container">
+        <div style="margin-top:10px;">
+          <mat-form-field appearance="standard">
+            <mat-label>Search</mat-label>
+            <input matInput (keyup)="applyFilter($event,securitydataSource)" placeholder="Ex. Mia" #input>
+         
+           </mat-form-field>
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="securitydataSource" matSort>
+          <ng-container matColumnDef="id">
+           <th mat-header-cell *matHeaderCellDef mat-sort-header>ID</th>
+           <td mat-cell *matCellDef="let row">{{row.id}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+            <td mat-cell *matCellDef="let row">{{row.name}}</td>
+          </ng-container>
+
+          
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+            <td mat-cell *matCellDef="let row">{{row.status}}</td>
+          </ng-container>
+
+         
+          
+          <ng-container matColumnDef="contact_number">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>contact_number</th>
+            <td mat-cell *matCellDef="let row">{{row.contact_number}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="email" class="emailColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+            <td mat-cell *matCellDef="let row">{{row.email}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="address">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Address</th>
+            <td mat-cell *matCellDef="let row">{{row.address}}</td>
+          </ng-container>
+          
+          <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>role</th>
+            <td mat-cell *matCellDef="let row">{{row.role}}</td>
+          </ng-container>
+
+          <ng-container matColumnDef="created" class="createdColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>created</th>
+            <td mat-cell *matCellDef="let row">{{row.created}}</td>
+          </ng-container>
+      
+          <ng-container matColumnDef="client_id" class="client_idColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>client id</th>
+            <td mat-cell *matCellDef="let row">{{row.client_id}}</td>
+          </ng-container>
+           
+          <ng-container matColumnDef="client_name" class="client_nameColumn">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>client name</th>
+            <td mat-cell *matCellDef="let row">{{row.client_name}}</td>
+          </ng-container>
+          
+      
+          
+      
+          <ng-container matColumnDef="action" >
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+            <td mat-cell *matCellDef="let row" >
+            <div class="editdeleteDiv">
+              <button mat-icon-button (click)="editSecurity(row)" color="primary">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">edit</mat-icon>
+               </button>
+        
+               <button mat-icon-button color="warn" >
+                <mat-icon aria-hidden="false" aria-label="Example home icon">delete</mat-icon>
+              </button>
+            </div>
+            
+            </td>
+          </ng-container>
+      
+          <tr mat-header-row *matHeaderRowDef="securityColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: securityColumns;"></tr>
+          
+          <tr class="mat-row" *matNoDataRow >
+            <td class="mat-cell" colspan="4" >No data matching your search "{{input.value}}"</td>
+            
+          </tr>
+          
+          
+      
+          </table>
+          <mat-paginator [pageSizeOptions]="[5,10,25,100]" aria-label="Select page of users"></mat-paginator>
+          
+        </div>
+        </div>
+      </div>     
+  </mat-tab>
+  
+
+
+
+  <mat-tab label="Visitors" class="matTabLabel"> 
+      Vsitors Table
+  </mat-tab>
+</mat-tab-group>
